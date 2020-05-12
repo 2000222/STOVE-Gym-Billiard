@@ -2,8 +2,11 @@
 """
 Created on Mon May 11 07:36:15 2020
 
-@author: dell
+@author: Sarah
+
+such a file just is used to restore some efficient python commands to have a good understanding of the STOVE environment.
 """
+
 import envs as env
 config = {
         'res': 32, 'hw': 10, 'n': 3, 'dt': 1, 'm': 1., 'fc': 0,
