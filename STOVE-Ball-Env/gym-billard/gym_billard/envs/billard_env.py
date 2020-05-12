@@ -39,7 +39,10 @@ class BillardEnv(gym.Env):
         self.action_space = spaces.Discrete(9) #9
         self.observation_space = self.env.get_obs_shape()  #（32,32,3）
         self.is_initialized = True
-        
+    
+    def seed(self, seed=None):
+        self.np_random, seed = seeding.np_random(seed)
+        return [seed]
         
     def step(self,action):
         frame_buffer, state, r, done = self.task.step_frame_buffer(_action=action)
@@ -48,7 +51,7 @@ class BillardEnv(gym.Env):
         reward = r
         return obs,reward,done,frame_buffer
         
-    def reset(self, frame_buffer=False):
+    def reset(self, frame_buffer):
         """
         Resets the environment in the gym environment
         Returns:
