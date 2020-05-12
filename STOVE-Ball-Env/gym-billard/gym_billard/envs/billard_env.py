@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Build a gym environment for Billard interaction env.
-@author: Hanxiao
+@author: Hanxiao(Sarah)
 """
 import gym
 from gym import error, spaces, utils
@@ -66,13 +66,13 @@ class BillardEnv(gym.Env):
             img, state, _, _ = self.task.step(0)
             return img, state
     
-    def render(self, mode='human'):
+    def render(self, mode='rgb_array'):
         #screen_width = 600
         #screen_height = 400
         #self.viewer = rendering.Viewer(screen_width, screen_height)
         self.viewer = rendering.SimpleImageViewer()
-		ball_img = self.env.draw_balls()
+	ball_img = self.env.draw_balls()
         #self.viewer.add_geom(ball)
-		self.viewer.imshow(ball_img)
+	self.viewer.imshow(ball_img)
         return ball_img
 		
