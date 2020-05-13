@@ -14,3 +14,4 @@ env.observation_space <br>
 env.action_space <br>
 env.reset() <br>
 env.render() <br>
+You can stop the render interactive environment by the command "Ctrl + C" 
