@@ -102,6 +102,9 @@ track.set_linewidth(4)
 viewer_2.add_geom(track)
 viewer_2.add_geom(img)
 
+#cd STOVE-Gym-Billiard/STOVE-Ball-Env/gym-billard
+pip install -e .
+cd gym_biard/envs
 import gym
 import gym_billard
 env = gym.make('billard-v0')
@@ -109,12 +112,39 @@ env.observation_space
 env.action_space
 env.reset()
 env.render()
+obs, state, r, done = env.step(6)
+import matplotlib.pyplot as plt
+plt.imshow(obs)
+plt.show()
+
+obs, state, r, done = env.step(0)
+import matplotlib.pyplot as plt
+plt.imshow(obs)
+plt.show()
+
 ##修改render function，首先呈现picture,其次是gif
 '''import matplotlib.pyplot as plt
 plt.imshow(ball_img)
 plt.show()'''
-env.step()
+
 ##Maybe we can create gif with imageio
+import envs as env
+config = {'res': 32, 'hw': 10, 'n': 3, 'dt': 1, 'm': 1., 'fc': 0, 'gran': 2, 'r': 1.2, 'check_overlap': False}
+env.generate_billiards_w_actions()
+env_2 = env.BillardsEnv(n=3, r=1., m=1., hw=10, granularity=5, res=32, t=1.,init_v_factor=0, friction_coefficient=0., seed=None, sprites=False)
 
+### interactive.py
+import interactive as ins
+env = ins.make_env()
+env.get_action_space()
+ins.play_game()
 
-
+img, state, _, _ = env.step(0)
+env.get_framebuffer_shape()
+env.resolve_action(6)
+env.resolve_action(8)
+env.calculate_reward()
+env.step(6)
+img,state, r, done = env.step(8)
+plt.imshow(img)
+plt.show()
