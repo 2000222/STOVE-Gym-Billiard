@@ -78,4 +78,8 @@ class BillardEnv(gym.Env):
         #self.viewer.add_geom(ball)
 	self.viewer.imshow(ball_img)
         return ball_img
-		
+	
+   def close(self):
+        if self.viewer:
+            self.viewer.close()
+ 
