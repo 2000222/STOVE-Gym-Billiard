@@ -3,9 +3,9 @@ Build a gym wrapper for the billard environment in ICLR paper STOVE.
 
 # Instructions
 **git clone .....** <br>
-cd STOVE-Gym-Billiard/STOVE-Ball-Env/gym-billard<br>
+cd STOVE-Gym-Billiard/STOVE-Ball-Env/gym-billard/ <br>
 pip install -e . <br>
-cd gym_biard/envs  <br>
+cd gym_billard/envs/  <br>
 **Open the python terminal** <br>
 import gym <br>
 import gym_billard <br>
