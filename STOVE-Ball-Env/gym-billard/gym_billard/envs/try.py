@@ -101,3 +101,20 @@ track = rendering.make_polyline(xys)
 track.set_linewidth(4)
 viewer_2.add_geom(track)
 viewer_2.add_geom(img)
+
+import gym
+import gym_billard
+env = gym.make('billard-v0')
+env.observation_space
+env.action_space
+env.reset()
+env.render()
+##修改render function，首先呈现picture,其次是gif
+'''import matplotlib.pyplot as plt
+plt.imshow(ball_img)
+plt.show()'''
+env.step()
+##Maybe we can create gif with imageio
+
+
+
